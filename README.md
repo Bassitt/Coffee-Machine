@@ -2,88 +2,81 @@
 
 <b>Examples</b>
 
+An espresso should be number 1 in the list, a latte number 2, and a cappuccino number 3.
+Options are named as "buy", "fill", "take".
+
 The greater-than symbol followed by a space (> ) represents the user input. Note that it's not part of the input.
 
 <b>Example 1:</b>
 
 <pre>
-Write how many ml of water the coffee machine has:
-> 300
-Write how many ml of milk the coffee machine has:
-> 65
-Write how many grams of coffee beans the coffee machine has:
-> 100
-Write how many cups of coffee you will need:
-> 1
-Yes, I can make that amount of coffee
+The coffee machine has:
+400 ml of water
+540 ml of milk
+120 g of coffee beans
+9 disposable cups
+$550 of money
+
+Write action (buy, fill, take): 
+> buy
+What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino: 
+> 3
+
+The coffee machine has:
+200 ml of water
+440 ml of milk
+108 g of coffee beans
+8 disposable cups
+$556 of money
 </pre>
 
 <b>Example 2:</b>
 
 <pre>
-Write how many ml of water the coffee machine has:
+The coffee machine has:
+400 ml of water
+540 ml of milk
+120 g of coffee beans
+9 disposable cups
+$550 of money
+
+Write action (buy, fill, take): 
+> fill
+Write how many ml of water you want to add: 
+> 2000
+Write how many ml of milk you want to add: 
 > 500
-Write how many ml of milk the coffee machine has:
-> 250
-Write how many grams of coffee beans the coffee machine has:
-> 200
-Write how many cups of coffee you will need:
+Write how many grams of coffee beans you want to add: 
+> 100
+Write how many disposable cups you want to add: 
 > 10
-No, I can make only 2 cup(s) of coffee
+
+The coffee machine has:
+2400 ml of water
+1040 ml of milk
+220 g of coffee beans
+19 disposable cups
+$550 of money
 </pre>
 
 <b>Example 3:</b>
 
 <pre>
-Write how many ml of water the coffee machine has:
-> 1550
-Write how many ml of milk the coffee machine has:
-> 299
-Write how many grams of coffee beans the coffee machine has:
-> 300
-Write how many cups of coffee you will need:
-> 3
-Yes, I can make that amount of coffee (and even 2 more than that)
-</pre>
+The coffee machine has:
+400 ml of water
+540 ml of milk
+120 g of coffee beans
+9 disposable cups
+$550 of money
 
-<b>Example 4:</b>
+Write action (buy, fill, take): 
+> take
+I gave you $550
 
-<pre>
-Write how many ml of water the coffee machine has:
-> 0
-Write how many ml of milk the coffee machine has:
-> 0
-Write how many grams of coffee beans the coffee machine has:
-> 0
-Write how many cups of coffee you will need:
-> 1
-No, I can make only 0 cup(s) of coffee
-</pre>
-
-<b>Example 5:</b>
-
-<pre>
-Write how many ml of water the coffee machine has:
-> 0
-Write how many ml of milk the coffee machine has:
-> 0
-Write how many grams of coffee beans the coffee machine has:
-> 0
-Write how many cups of coffee you will need:
-> 0
-Yes, I can make that amount of coffee 
-</pre>
-
-<b>Example 6:</b>
-
-<pre>
-Write how many ml of water the coffee machine has:
-> 200
-Write how many ml of milk the coffee machine has:
-> 50
-Write how many grams of coffee beans the coffee machine has:
-> 15
-Write how many cups of coffee you will need:
-> 0
-Yes, I can make that amount of coffee (and even 1 more than that)
+The coffee machine has:
+400 ml of water
+540 ml of milk
+120 g of coffee beans
+9 disposable cups
+$0 of money
 </pre>
