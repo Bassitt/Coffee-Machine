@@ -11,6 +11,7 @@ public class CoffeeMachine {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void stat() {
+        System.out.println();
         System.out.println("The coffee machine has:");
         System.out.println(waterSize + " ml of water");
         System.out.println(milkSize + " ml of milk");
@@ -19,7 +20,20 @@ public class CoffeeMachine {
         System.out.println("$" + money + " of money");
     }
 
+    public static void check(int water_per_cup, int milk_per_cup, int beans_per_cup, int cost_per_cup) {
+        if (waterSize < water_per_cup) {
+            System.out.println("Sorry, not enough water!");
+        } else if (milkSize < milk_per_cup) {
+            System.out.println("Sorry, not enough milk!");
+        } else if (cofeeBeansSize < cost_per_cup) {
+            System.out.println("Sorry, not enough beans!");
+        } else {
+            update(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
+        }
+    }
+
     public static void update(int water_per_cup, int milk_per_cup, int beans_per_cup, int cost_per_cup) {
+        System.out.println("I have enough resources, making you a coffee!");
         waterSize -= water_per_cup;
         milkSize -= milk_per_cup;
         cofeeBeansSize -= beans_per_cup;
@@ -32,7 +46,7 @@ public class CoffeeMachine {
         int milk_per_cup = 0;
         int beans_per_cup = 16;
         int cost_per_cup = 4;
-        update(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
+        check(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
     }
 
     public static void latte() {
@@ -40,7 +54,7 @@ public class CoffeeMachine {
         int milk_per_cup = 75;
         int beans_per_cup = 20;
         int cost_per_cup = 7;
-        update(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
+        check(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
     }
 
     public static void cappuccino() {
@@ -48,20 +62,22 @@ public class CoffeeMachine {
         int milk_per_cup = 100;
         int beans_per_cup = 12;
         int cost_per_cup = 6;
-        update(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
+        check(water_per_cup, milk_per_cup, beans_per_cup, cost_per_cup);
     }
 
     public static void buy() {
-        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino: ");
-        int input = scanner.nextInt();
+        System.out.println();
+        System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu: ");
+        String input = scanner.next();
         switch (input) {
-            case 1 -> espresso();
-            case 2 -> latte();
-            case 3 -> cappuccino();
+            case "1" -> espresso();
+            case "2" -> latte();
+            case "3" -> cappuccino();
         }
     }
 
     public static void fill() {
+        System.out.println();
         System.out.println("Write how many ml of water you want to add: ");
         int fillWater = scanner.nextInt();
 
@@ -86,16 +102,27 @@ public class CoffeeMachine {
     }
 
     public static void main(String[] args) {
-        stat();
-        System.out.println();
-        System.out.println("Write action (buy, fill, take): ");
-        String input = scanner.next();
-        switch (input) {
-            case "buy" -> buy();
-            case "fill" -> fill();
-            case "take" -> take();
+        label:
+        while (true) {
+            System.out.println();
+            System.out.println("Write action (buy, fill, take, remaining, exit): ");
+            String input = scanner.next();
+            switch (input) {
+                case "buy":
+                    buy();
+                    break;
+                case "fill":
+                    fill();
+                    break;
+                case "take":
+                    take();
+                    break;
+                case "remaining":
+                    stat();
+                    break;
+                default:
+                    break label;
+            }
         }
-        System.out.println();
-        stat();
     }
 }
